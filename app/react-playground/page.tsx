@@ -1,6 +1,5 @@
 'use client';
-import InputCode from '@/components/InputCode';
-import OutputCode from '@/components/OutputCode';
+
 import OutputReactCode from '@/components/OutputReactCode';
 import ReactInputCode from '@/components/ReactInputCode';
 import { useTheme } from '@/store/useThemeStore';

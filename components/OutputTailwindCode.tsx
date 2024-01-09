@@ -1,5 +1,5 @@
 'use client';
-import * as DOMPurify from 'dompurify';
+import DOMPurify from 'dompurify';
 import { useMonaco } from '@monaco-editor/react';
 import {
   MonacoTailwindcss,
@@ -39,22 +39,6 @@ const OutputTailwindCode = ({
     useState<MonacoTailwindcss>();
   const [output, setOutput] = useState('');
   const [preview, setPreview] = useState(true);
-  useEffect(() => {
-    monaco?.languages.css.cssDefaults.setOptions({
-      data: {
-        dataProviders: {
-          tailwindcssData,
-        },
-      },
-    });
-    if (monaco) {
-      const monacoTailwindCSSConfig = configureMonacoTailwindcss(monaco, {
-        tailwindConfig: JSON.parse(config),
-      });
-
-      setMonacoTailwindCSS(monacoTailwindCSSConfig);
-    }
-  }, [monaco, config]);
 
   useEffect(() => {
     window.MonacoEnvironment = {
@@ -110,6 +94,23 @@ const OutputTailwindCode = ({
       },
     };
   }, []);
+  useEffect(() => {
+    if (monaco) {
+      monaco?.languages.css.cssDefaults.setOptions({
+        data: {
+          dataProviders: {
+            tailwindcssData,
+          },
+        },
+      });
+
+      const monacoTailwindCSSConfig = configureMonacoTailwindcss(monaco, {
+        tailwindConfig: JSON.parse(config),
+      });
+      setMonacoTailwindCSS(monacoTailwindCSSConfig);
+    }
+  }, [monaco, config]);
+
   const generateOutput = useCallback(async () => {
     const content = await monacoTailwindCSS?.generateStylesFromContent(css, [
       {
@@ -165,7 +166,7 @@ const OutputTailwindCode = ({
             className={` ${
               preview && '!text-blue-600 !bg-slate-100 dark:!bg-slate-100 '
             } dark:text-white hover:text-blue-600 text-sm bg-white dark:!bg-secondary-dark
-           hover:bg-slate-100 border border-slate-200 rounded-l-lg font-medium px-4 py-2 inline-flex space-x-1 items-center`}
+             hover:bg-slate-100 border border-slate-200 rounded-l-lg font-medium px-4 py-2 inline-flex space-x-1 items-center`}
           >
             <span>Preview</span>
           </button>
@@ -174,7 +175,7 @@ const OutputTailwindCode = ({
             className={`${
               !preview && '!text-blue-600 bg-slate-100 dark:!bg-slate-100'
             } dark:text-white hover:text-blue-600 text-sm bg-white dark:!bg-secondary-dark
-           hover:bg-slate-100 border rounded-r-lg border-slate-200  font-medium px-4 py-2 inline-flex space-x-1 items-center`}
+             hover:bg-slate-100 border rounded-r-lg border-slate-200  font-medium px-4 py-2 inline-flex space-x-1 items-center`}
           >
             <span>Compiled CSS</span>
           </button>
@@ -186,10 +187,10 @@ const OutputTailwindCode = ({
               <div
                 dangerouslySetInnerHTML={{
                   __html: `<html>
-    <head>   <style>${DOMPurify.sanitize(output)}</style></head>
- 
-   <body class=''>${DOMPurify.sanitize(html)}</body>
-    </html>`,
+      <head>   <style>${DOMPurify.sanitize(output)}</style></head>
+
+     <body class=''>${DOMPurify.sanitize(html)}</body>
+      </html>`,
                 }}
               ></div>
             ) : (

@@ -20,10 +20,14 @@ export const executeCode = (code: string) => {
 };
 
 export const getFromStorage = <T>(key: string): T | null => {
-  const data = localStorage.getItem(key)
-    ? JSON.parse(localStorage.getItem(key) as string)
-    : null;
-  return data;
+  if (typeof window !== 'undefined') {
+    const data = localStorage?.getItem(key)
+      ? JSON.parse(localStorage?.getItem(key) as string)
+      : null;
+    return data;
+  } else {
+    return null;
+  }
 };
 
 export const executeReactCode = async (code: string, dependencies: any) => {
