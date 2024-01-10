@@ -18,7 +18,7 @@ export default function Switcher() {
     setDarkSide(checked);
   };
   return (
-    <div className="w-full fixed shadow-lg bg-secondary-light dark:bg-secondary-dark py-4">
+    <div className="w-full fixed top-0 shadow-lg bg-secondary-light dark:bg-secondary-dark py-4">
       <div className="container items-center justify-between flex mx-auto">
         <Link
           href="/"

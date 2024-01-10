@@ -84,7 +84,7 @@ const ReactCodePage = () => {
     compile();
   }, [inputCode, initialized, compile]);
   return (
-    <div className="grid pb-10 container mt-7 mx-auto grid-cols-2 gap-8 w-full">
+    <div className="grid pb-10 container mt-[120px] mx-auto grid-cols-2 gap-8 w-full">
       <ReactInputCode value={inputCode} setValue={setInputCode} theme={theme} />
       <OutputReactCode errorCode={errorCode} outputCode={outpuCode} />
     </div>
