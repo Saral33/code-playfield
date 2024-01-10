@@ -8,10 +8,14 @@ const Confetti = dynamic(() => import('react-confetti'), {
   ssr: false,
 });
 const HeroSection = () => {
-  const { width, height } = useWindowSize();
+  const { width } = useWindowSize();
   return (
     <div className="h-[95vh] bg-black ">
-      <Confetti numberOfPieces={40} height={height} width={width} />
+      <Confetti
+        className="h-[calc(95vh-80px)] mt-[80px]"
+        numberOfPieces={45}
+        width={width}
+      />
       <div className="text-white w-full flex justify-center items-center h-full">
         <div className="flex text-center flex-col gap-16 px-3 max-w-[650px]">
           <h1 className="text-4xl md:text-6xl font-medium">
