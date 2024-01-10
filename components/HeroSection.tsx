@@ -1,8 +1,12 @@
 'use client';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import React from 'react';
-import Confetti from 'react-confetti';
+
 import useWindowSize from 'react-use/lib/useWindowSize';
+const Confetti = dynamic(() => import('react-confetti'), {
+  ssr: false,
+});
 const HeroSection = () => {
   const { width, height } = useWindowSize();
   return (
