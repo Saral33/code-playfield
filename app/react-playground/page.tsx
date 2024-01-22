@@ -1,7 +1,10 @@
 'use client';
 
+import Column from '@/components/Column';
 import OutputReactCode from '@/components/OutputReactCode';
 import ReactInputCode from '@/components/ReactInputCode';
+import ScrollToTop from '@/components/ScrollToToTop';
+import { useLayoutState } from '@/store/useLayoutStore';
 import { useTheme } from '@/store/useThemeStore';
 import initSwc, { transformSync } from '@swc/wasm-web';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -50,7 +53,7 @@ const ReactCodePage = () => {
   const [outpuCode, setOutputCode] = useState('');
   const [errorCode, setErrorCode] = useState('');
   const { theme } = useTheme((satte) => satte);
-
+  const { layout } = useLayoutState((s) => s);
   useEffect(() => {
     async function importAndRunSwcOnMount() {
       await initSwc();
@@ -84,10 +87,22 @@ const ReactCodePage = () => {
     compile();
   }, [inputCode, initialized, compile]);
   return (
-    <div className="grid pb-10 container mt-[120px] mx-auto grid-cols-2 gap-8 w-full">
-      <ReactInputCode value={inputCode} setValue={setInputCode} theme={theme} />
-      <OutputReactCode errorCode={errorCode} outputCode={outpuCode} />
-    </div>
+    <>
+      <ScrollToTop />
+      <Column />
+      <div
+        className={`grid pb-10 container ${
+          layout === 'row' ? 'grid-cols-2' : 'grid-cols-1'
+        } mx-auto   gap-8 w-full`}
+      >
+        <ReactInputCode
+          value={inputCode}
+          setValue={setInputCode}
+          theme={theme}
+        />
+        <OutputReactCode errorCode={errorCode} outputCode={outpuCode} />
+      </div>
+    </>
   );
 };
 

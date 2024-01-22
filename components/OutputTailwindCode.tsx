@@ -10,6 +10,7 @@ import { useCallback, useEffect, useState } from 'react';
 import InputTailwindCode from './InputTailwindCode';
 import { useTheme } from '@/store/useThemeStore';
 import SkeletonLoader from './SkeletonLoader';
+import { useLayoutState } from '@/store/useLayoutStore';
 
 type Tprops = {
   html: string;
@@ -94,6 +95,7 @@ const OutputTailwindCode = ({
       },
     };
   }, []);
+  const { layout } = useLayoutState((s) => s);
   useEffect(() => {
     if (monaco) {
       monaco?.languages.css.cssDefaults.setOptions({
@@ -141,7 +143,11 @@ const OutputTailwindCode = ({
   }, [generateOutput, html, config]);
 
   return (
-    <div className="grid grid-cols-2 gap-8">
+    <div
+      className={`grid  gap-8  ${
+        layout === 'row' ? 'grid-cols-2' : 'grid-cols-1'
+      }`}
+    >
       <InputTailwindCode
         monaco={monacoTailwindCSS}
         setValue={

@@ -3,37 +3,186 @@ export const DarkModeIcon = (
     id="Layer_1"
     data-name="Layer 1"
     xmlns="http://www.w3.org/2000/svg"
+    width="64px"
+    height="64px"
     viewBox="0 0 64 64"
+    enable-background="new 0 0 64 64"
   >
-    <title>moon</title>
-    <path d="M32,53A21.21,21.21,0,0,1,12.55,39.92c-.37-.91-.64-2.16.8-2.14s2.59.28,3.93.17a15.85,15.85,0,0,0,5.79-1.61,16.27,16.27,0,0,0,7.8-8.44A16,16,0,0,0,30.38,15a13.73,13.73,0,0,0-.81-1.45c-.24-.39-.68-.82-.73-1.31C28.68,10.72,31.13,11,32,11A21,21,0,0,1,52.94,33.61,21.2,21.2,0,0,1,32,53Z"></path>
-    <path d="M14.75,40a19.19,19.19,0,0,0,25.81,9,19,19,0,0,0-9-36A18.18,18.18,0,0,1,23.4,38.4,17.87,17.87,0,0,1,14.75,40Z"></path>
-    <path d="M25,21c-1.38,0-1-2.14-1-3s-.38-3,1-3,1,2.05,1,2.9S26.4,21,25,21Z"></path>
-    <path d="M27,19H23.86a3.3,3.3,0,0,1-1.25-.09A1,1,0,0,1,23,17a23.88,23.88,0,0,1,3.05,0,4.16,4.16,0,0,1,1.22,0A1,1,0,0,1,27,19Z"></path>
-    <path d="M20,30H16.86a3.3,3.3,0,0,1-1.25-.09A1,1,0,0,1,16,28a23.88,23.88,0,0,1,3.05,0,4.16,4.16,0,0,1,1.22,0A1,1,0,0,1,20,30Z"></path>
-    <path d="M18,32c-1.38,0-1-2.14-1-3s-.38-3,1-3,1,2.05,1,2.9S19.4,32,18,32Z"></path>
-    <path d="M12,23.24c-.77,0-1.59-1.17-2.07-1.65L7.4,19.06c-.63-.63-.82-1.26-.14-2s1.6-1.61,2.4-2.41A11.71,11.71,0,0,1,11.4,13c1-.61,1.67.45,2.28,1.06l2.63,2.63c.63.62,1.3,1.21.59,2.1s-1.63,1.63-2.42,2.42C13.93,21.73,12.88,23.24,12,23.24Z"></path>
-    <rect
-      x="10"
-      y="16"
-      width="4"
-      height="4"
-      transform="translate(-9.21 13.76) rotate(-45)"
-    ></rect>
+    <title>Moon</title>
+    <path
+      id="Moon"
+      d="M12.79,25A12.79,12.79,0,0,1,8.93,0,.5.5,0,0,1,9.5.76,10.72,10.72,0,0,0,24.24,15.49a.5.5,0,0,1,.74.58A12.73,12.73,0,0,1,12.79,25ZM8,1.43A11.79,11.79,0,1,0,23.57,17,11.73,11.73,0,0,1,8,1.43Z"
+      fill="#0e1d25"
+    ></path>
   </svg>
 );
 
 export const LightModeIcon = (
   <svg
-    width="32"
-    height="32"
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px"
+    y="0px"
+    width="32px"
+    height="32px"
     viewBox="0 0 64 64"
+    enable-background="new 0 0 64 64"
+  >
+    <title>moon</title>
+    <g>
+      <circle
+        fill="none"
+        stroke="#fff"
+        stroke-width="2"
+        stroke-miterlimit="10"
+        cx="32"
+        cy="32"
+        r="16"
+      ></circle>
+      <line
+        fill="none"
+        stroke="#fff"
+        stroke-width="2"
+        stroke-miterlimit="10"
+        x1="32"
+        y1="10"
+        x2="32"
+        y2="0"
+      ></line>
+      <line
+        fill="none"
+        stroke="#fff"
+        stroke-width="2"
+        stroke-miterlimit="10"
+        x1="32"
+        y1="64"
+        x2="32"
+        y2="54"
+      ></line>
+      <line
+        fill="none"
+        stroke="#fff"
+        stroke-width="2"
+        stroke-miterlimit="10"
+        x1="54"
+        y1="32"
+        x2="64"
+        y2="32"
+      ></line>
+      <line
+        fill="none"
+        stroke="#fff"
+        stroke-width="2"
+        stroke-miterlimit="10"
+        x1="0"
+        y1="32"
+        x2="10"
+        y2="32"
+      ></line>
+      <line
+        fill="none"
+        stroke="#fff"
+        stroke-width="2"
+        stroke-miterlimit="10"
+        x1="48"
+        y1="16"
+        x2="53"
+        y2="11"
+      ></line>
+      <line
+        fill="none"
+        stroke="#fff"
+        stroke-width="2"
+        stroke-miterlimit="10"
+        x1="11"
+        y1="53"
+        x2="16"
+        y2="48"
+      ></line>
+      <line
+        fill="none"
+        stroke="#fff"
+        stroke-width="2"
+        stroke-miterlimit="10"
+        x1="48"
+        y1="48"
+        x2="53"
+        y2="53"
+      ></line>
+      <line
+        fill="none"
+        stroke="#fff"
+        stroke-width="2"
+        stroke-miterlimit="10"
+        x1="11"
+        y1="11"
+        x2="16"
+        y2="16"
+      ></line>
+    </g>
+  </svg>
+);
+
+export const lightColumnIcon = (
+  <svg
+    width="24px"
+    height="24px"
+    viewBox="0 0 48 48"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      d="M52.81 34.76C52.7811 34.5374 52.6924 34.3268 52.5533 34.1507C52.4141 33.9746 52.2298 33.8395 52.02 33.76L35.02 27.37L42.93 6.55996C43.021 6.30655 43.0279 6.0305 42.9494 5.7729C42.8709 5.51531 42.7113 5.28995 42.4944 5.13036C42.2775 4.97078 42.0149 4.8855 41.7456 4.88723C41.4763 4.88896 41.2148 4.9776 41 5.13996L11.65 28.06C11.4768 28.1992 11.3431 28.3815 11.2624 28.5885C11.1817 28.7956 11.1567 29.0202 11.19 29.24C11.2188 29.4625 11.3076 29.6731 11.4467 29.8492C11.5858 30.0253 11.7701 30.1604 11.98 30.24L28.98 36.63L21.07 57.44C20.9789 57.6934 20.9721 57.9694 21.0506 58.227C21.1291 58.4846 21.2886 58.71 21.5055 58.8696C21.7224 59.0291 21.9851 59.1144 22.2543 59.1127C22.5236 59.111 22.7851 59.0223 23 58.86L52.35 35.94C52.5256 35.8028 52.661 35.6208 52.742 35.4131C52.8229 35.2055 52.8464 34.9798 52.81 34.76ZM25 54.15L31.73 36.32C31.8439 36.0095 31.8313 35.6667 31.6947 35.3655C31.5581 35.0643 31.3086 34.8288 31 34.71L15 28.71L39 9.84996L32.29 27.68C32.1749 27.9879 32.1847 28.3286 32.3174 28.6294C32.45 28.9302 32.695 29.1673 33 29.29L49 35.29L25 54.15Z"
-      fill="white"
-    ></path>
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g
+      id="SVGRepo_tracerCarrier"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    ></g>
+    <g id="SVGRepo_iconCarrier">
+      {' '}
+      <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>{' '}
+      <path
+        d="M41 4H7C5.34315 4 4 5.34315 4 7V41C4 42.6569 5.34315 44 7 44H41C42.6569 44 44 42.6569 44 41V7C44 5.34315 42.6569 4 41 4Z"
+        stroke="#000000"
+        stroke-width="4"
+      ></path>{' '}
+      <path
+        d="M24 4L24 44"
+        stroke="#000000"
+        stroke-width="4"
+        stroke-linecap="round"
+      ></path>{' '}
+    </g>
+  </svg>
+);
+export const darkColumnIcon = (
+  <svg
+    width="24px"
+    height="24px"
+    viewBox="0 0 48 48"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g
+      id="SVGRepo_tracerCarrier"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    ></g>
+    <g id="SVGRepo_iconCarrier">
+      {' '}
+      <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>{' '}
+      <path
+        d="M41 4H7C5.34315 4 4 5.34315 4 7V41C4 42.6569 5.34315 44 7 44H41C42.6569 44 44 42.6569 44 41V7C44 5.34315 42.6569 4 41 4Z"
+        stroke="#fff"
+        stroke-width="4"
+      ></path>{' '}
+      <path
+        d="M24 4L24 44"
+        stroke="#fff"
+        stroke-width="4"
+        stroke-linecap="round"
+      ></path>{' '}
+    </g>
   </svg>
 );

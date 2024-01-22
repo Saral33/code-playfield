@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}  bg-white dark:!bg-primary-dark`}>
         <Switcher />
-        {children}
+        <div className="h-full">{children}</div>
       </body>
     </html>
   );

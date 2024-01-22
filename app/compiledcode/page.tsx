@@ -1,6 +1,10 @@
 'use client';
+import Column from '@/components/Column';
 import InputCode from '@/components/InputCode';
 import OutputCode from '@/components/OutputCode';
+import ScrollToTop from '@/components/ScrollToToTop';
+import { darkColumnIcon, lightColumnIcon } from '@/icons/Icons';
+import { useLayoutState } from '@/store/useLayoutStore';
 import { useTheme } from '@/store/useThemeStore';
 import initSwc, { transformSync } from '@swc/wasm-web';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -28,7 +32,7 @@ const CompiledCodePage = () => {
   const [outpuCode, setOutputCode] = useState('');
   const [errorCode, setErrorCode] = useState('');
   const { theme } = useTheme((satte) => satte);
-
+  const { layout } = useLayoutState((s) => s);
   useEffect(() => {
     async function importAndRunSwcOnMount() {
       await initSwc();
@@ -62,10 +66,18 @@ const CompiledCodePage = () => {
     compile();
   }, [inputCode, initialized, compile]);
   return (
-    <div className="grid pb-10 container mt-[120px] mx-auto grid-cols-2 gap-8 w-full">
-      <InputCode value={inputCode} setValue={setInputCode} theme={theme} />
-      <OutputCode errorCode={errorCode} code={outpuCode} />
-    </div>
+    <>
+      <ScrollToTop />
+      <Column />
+      <div
+        className={`grid ${
+          layout === 'row' ? 'grid-cols-2' : 'grid-cols-1'
+        } pb-10 h-full container mt-1 mx-auto  gap-8 w-full`}
+      >
+        <InputCode value={inputCode} setValue={setInputCode} theme={theme} />
+        <OutputCode errorCode={errorCode} code={outpuCode} />
+      </div>
+    </>
   );
 };
 

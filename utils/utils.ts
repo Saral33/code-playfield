@@ -5,7 +5,14 @@ export const executeCode = (code: string) => {
     const captureConsoleMethods: Record<string, (...args: any[]) => void> = {};
     ['log', 'info', 'warn', 'error'].forEach((method) => {
       captureConsoleMethods[method] = (...args) => {
-        output += `${method}: ${args.join(' ')}\n`;
+        const formattedArgs = args.map((arg) => {
+          if (typeof arg === 'object' && arg !== null) {
+            return JSON.stringify(arg).replace(/"([^"]+)":/g, '$1:');
+          } else {
+            return arg;
+          }
+        });
+        output += `${method}: ${formattedArgs.join(',')}\n`;
       };
     });
 
